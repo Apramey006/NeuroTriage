@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local conversation transcripts / exports
+*-build-a-nextjs-tailwind-web-app-called-neurotr.txt
+2026-*.txt
