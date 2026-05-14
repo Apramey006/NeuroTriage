@@ -87,24 +87,6 @@ The decision logic encodes well-established acute-stroke concepts. None of these
 
 ---
 
-## Limitations
-
-NeuroTriage is a **prototype** and a UX demonstrator. Specifically:
-
-- **Not a medical device.** Not validated, not FDA-cleared, no IRB, no clinical sign-off. Do not use for patient care.
-- **The ranking model is heuristic.** The point weights for LKW, FAST, LVO, NIHSS, glucose, and transport were chosen for plausibility and explainability — not derived from outcome data. They have not been validated against real triage outcomes.
-- **No real LVO score.** The LVO concern grade is a hand-rolled composite. It is **not** RACE, FAST-ED, LAMS, VAN, C-STAT, or any other validated prehospital LVO scale.
-- **No EHR or device integration.** All data is entered manually. Nothing reads from the chart, vitals, labs, ECG, imaging, or EMS dispatch. Data persists in browser `localStorage` only.
-- **No NIHSS scorer UI yet.** The intake takes a clinician's bedside NIHSS *estimate* (0–42). The full 15-item NIHSS catalog is included in code (`lib/nihss.ts`) but not wired to a UI.
-- **No contraindication enforcement.** The prototype surfaces a few pre-tPA gates (BP, glucose) but does not enforce the complete absolute/relative contraindication checklist (recent surgery, INR/PT, platelet count, DOAC last-dose timing, prior ICH, etc.).
-- **Imaging is referenced but not displayed.** Workflow steps suggest non-contrast CT, CTA, and CT perfusion / MRI DWI-FLAIR mismatch, but no DICOM viewer, ASPECTS scoring, or perfusion threshold mismatch overlay exists.
-- **No authentication, audit log, or multi-user state.** Single-browser demo.
-- **No mobile-first UI.** Layout is optimized for tablet/desktop ED workstations; mobile is functional but secondary.
-- **No telemetry or feedback loop.** The system makes suggestions but never learns from clinician overrides or final treatment decisions.
-- **Time zone naïve.** LKW uses the browser's local time.
-
----
-
 ## Future directions
 
 ### EHR integration
